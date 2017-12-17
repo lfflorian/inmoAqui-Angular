@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
-    selector: 'agregar-inmueble',
-    templateUrl: 'agregar-inmueble.component.html'
+    selector: 'editar-inmueble',
+    templateUrl: 'inmueble.component.html'
 })
 
-export class AgregarInmueble {
+export class EditarInmueble {
     
 }
