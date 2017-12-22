@@ -3,15 +3,18 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
     selector: 'agregar-inmueble',
-    templateUrl: 'inmueble.component.html'
+    templateUrl: 'inmueble.component.html',
+    styleUrls: ['./inmueble.component.css']
 })
 
 export class AgregarInmueble {
-    // tipoInmuebles: string[] = new string(
-    //     'Casa',
-    //     'Apartamento',
-    //     'Oficina',
-    //     'Oficina',
-    // )
+    TipoInmuebles: string[] = [
+        "Casa",
+        "Apartamento",
+        "Oficina",
+        "Terreno",
+        "Edificio",
+        "Finca"
+    ];
 
 }

@@ -1,4 +1,4 @@
-<div class="example-container">
+<div class="agregarInmueble">
   <!-- id: number;
   titulo: string;
   descripcion: string;
@@ -34,8 +34,7 @@
         <div class="form-group">
           <label for="tipoInmueble">Tipo de Inmueble</label>
           <select  class="form-control">
-            <option>1</option>
-            <option>2</option>
+            <option *ngFor="let tipo of TipoInmuebles" >{{tipo}}</option>
           </select>
         </div>
       </div>
