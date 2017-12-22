@@ -17,4 +17,9 @@ export class AgregarInmueble {
         "Finca"
     ];
 
+    Opciones: string[] = [
+        "Venta",
+        "Renta"
+    ]
+
 }

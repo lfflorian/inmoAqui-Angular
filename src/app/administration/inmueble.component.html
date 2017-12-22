@@ -13,93 +13,94 @@
   zona: string;
   colonia: string;
   imagenes: Imagenes[]; -->
-  
-  <div class="container">
-    <h1>Agregar Inmueble</h1>
-    <div class="row">
-      <form action="">
-        <div class="col-sm-12">
-          <div class="form-group">
-            <label for="titulo">Titulo</label>
-            <input type="text" class="form-control" id="titulo" placeholder="Titulo">
-          </div>
-        </div>
-        <div class="col-sm-12">
-        <div class="form-group">
-          <label for="descripcion">Descripcion</label>
-          <textarea class="form-control" rows="3" id="descripcion"></textarea>
+  <div class="row">
+    <div class="container">
+        <h1>Agregar Inmueble</h1>
+      <div class="col-md-8 col-md-offset-2 contenido col-sm-12">
+        <div class="row">
+          <form action="">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="titulo">Titulo</label>
+                <input type="text" class="form-control" id="titulo" placeholder="Titulo">
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="descripcion">Descripcion</label>
+                <textarea class="form-control" rows="3" id="descripcion"></textarea>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="tipoInmueble">Tipo de Inmueble</label>
+                <select class="form-control">
+                  <option *ngFor="let tipo of TipoInmuebles">{{tipo}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="opcion">Opción</label>
+                <select class="form-control">
+                  <option *ngFor="let opcion of Opciones">{{opcion}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="habitaciones">No. Habitaciones</label>
+                <input type="number" class="form-control" id="habitaciones" placeholder="Habitaciones">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="baños">No. Baños</label>
+                <input type="number" class="form-control" id="baños" placeholder="Baños">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="parqueos">No. Parqueos</label>
+                <input type="number" class="form-control" id="parqueos" placeholder="Parqueos">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="dimenciones">Dimenciones</label>
+                <input type="number" class="form-control" id="dimenciones" placeholder="Dimenciones">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="departamento">Departamento</label>
+                <input type="text" class="form-control" id="departamento" placeholder="Departamento">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="municipio">Municipio</label>
+                <input type="text" class="form-control" id="municipio" placeholder="Municipio">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="zona">Zona</label>
+                <input type="text" class="form-control" id="zona" placeholder="Zona">
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="colonia">Colonia</label>
+                <input type="text" class="form-control" id="colonia" placeholder="Colonia">
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <button type="submit" class="btn btn-info">Enviar</button>
+            </div>
+          </form>
         </div>
       </div>
-      <div class="col-sm-6">
-        <div class="form-group">
-          <label for="tipoInmueble">Tipo de Inmueble</label>
-          <select  class="form-control">
-            <option *ngFor="let tipo of TipoInmuebles" >{{tipo}}</option>
-          </select>
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="form-group">
-          <label for="opcion">Opción</label>
-          <select  class="form-control">
-            <option>1</option>
-            <option>2</option>
-          </select>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="form-group">
-          <label for="habitaciones">Numero de Habitaciones</label>
-          <input type="number" class="form-control" id="habitaciones" placeholder="Habitaciones">
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="form-group">
-          <label for="baños">Numero de Baños</label>
-          <input type="number" class="form-control" id="baños" placeholder="Baños">
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="form-group">
-          <label for="parqueos">Numero de Parqueos</label>
-          <input type="number" class="form-control" id="parqueos" placeholder="Parqueos">
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="form-group">
-          <label for="dimenciones">Dimenciones</label>
-          <input type="number" class="form-control" id="dimenciones" placeholder="Dimenciones">
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="form-group">
-          <label for="departamento">Departamento</label>
-          <input type="text" class="form-control" id="departamento" placeholder="Departamento">
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="form-group">
-          <label for="municipio">Municipio</label>
-          <input type="text" class="form-control" id="municipio" placeholder="Municipio">
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="form-group">
-          <label for="zona">Zona</label>
-          <input type="text" class="form-control" id="zona" placeholder="Zona">
-        </div>
-      </div>
-      <div class="col-sm-12">
-        <div class="form-group">
-          <label for="colonia">Colonia</label>
-          <input type="text" class="form-control" id="colonia" placeholder="Colonia">
-        </div>
-      </div>
-      <div class="col-sm-12">
-          <button type="submit" class="btn btn-info">Enviar</button>
-      </div>
-      </form>
     </div>
   </div>
-
 </div>
