@@ -18,23 +18,23 @@
         <h1>Agregar Inmueble</h1>
       <div class="col-md-8 col-md-offset-2 contenido col-sm-12">
         <div class="row">
-          <form action="">
+          <form [formGroup]="CreateForm" (ngSubmit)="onSubmit(CreateForm)">
             <div class="col-sm-12">
               <div class="form-group">
                 <label for="titulo">Titulo</label>
-                <input type="text" class="form-control" id="titulo" placeholder="Titulo">
+                <input formControlName="titulo" type="text" class="form-control" id="titulo" placeholder="Titulo">
               </div>
             </div>
             <div class="col-sm-12">
               <div class="form-group">
                 <label for="descripcion">Descripcion</label>
-                <textarea class="form-control" rows="3" id="descripcion"></textarea>
+                <textarea formControlName="descripcion" class="form-control" rows="3" id="descripcion"></textarea>
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form-group">
                 <label for="tipoInmueble">Tipo de Inmueble</label>
-                <select class="form-control">
+                <select formControlName="tipoinmueble" class="form-control">
                   <option *ngFor="let tipo of TipoInmuebles">{{tipo}}</option>
                 </select>
               </div>
@@ -42,7 +42,7 @@
             <div class="col-sm-6">
               <div class="form-group">
                 <label for="opcion">Opción</label>
-                <select class="form-control">
+                <select formControlName="opcion" class="form-control">
                   <option *ngFor="let opcion of Opciones">{{opcion}}</option>
                 </select>
               </div>
@@ -50,49 +50,49 @@
             <div class="col-sm-3">
               <div class="form-group">
                 <label for="habitaciones">No. Habitaciones</label>
-                <input type="number" class="form-control" id="habitaciones" placeholder="Habitaciones">
+                <input formControlName="nohabitaciones" type="number" class="form-control" id="habitaciones" placeholder="Habitaciones">
               </div>
             </div>
             <div class="col-sm-3">
               <div class="form-group">
                 <label for="baños">No. Baños</label>
-                <input type="number" class="form-control" id="baños" placeholder="Baños">
+                <input formControlName="nobaños" type="number" class="form-control" id="baños" placeholder="Baños">
               </div>
             </div>
             <div class="col-sm-3">
               <div class="form-group">
                 <label for="parqueos">No. Parqueos</label>
-                <input type="number" class="form-control" id="parqueos" placeholder="Parqueos">
+                <input formControlName="parqueos" type="number" class="form-control" id="parqueos" placeholder="Parqueos">
               </div>
             </div>
             <div class="col-sm-3">
               <div class="form-group">
                 <label for="dimenciones">Dimenciones</label>
-                <input type="number" class="form-control" id="dimenciones" placeholder="Dimenciones">
+                <input formControlName="dimenciones" type="number" class="form-control" id="dimenciones" placeholder="Dimenciones">
               </div>
             </div>
             <div class="col-sm-4">
               <div class="form-group">
                 <label for="departamento">Departamento</label>
-                <input type="text" class="form-control" id="departamento" placeholder="Departamento">
+                <input formControlName="departamento" type="text" class="form-control" id="departamento" placeholder="Departamento">
               </div>
             </div>
             <div class="col-sm-4">
               <div class="form-group">
                 <label for="municipio">Municipio</label>
-                <input type="text" class="form-control" id="municipio" placeholder="Municipio">
+                <input formControlName="municipio" type="text" class="form-control" id="municipio" placeholder="Municipio">
               </div>
             </div>
             <div class="col-sm-4">
               <div class="form-group">
                 <label for="zona">Zona</label>
-                <input type="text" class="form-control" id="zona" placeholder="Zona">
+                <input formControlName="zona"  type="text" class="form-control" id="zona" placeholder="Zona">
               </div>
             </div>
             <div class="col-sm-12">
               <div class="form-group">
                 <label for="colonia">Colonia</label>
-                <input type="text" class="form-control" id="colonia" placeholder="Colonia">
+                <input formControlName="colonia"  type="text" class="form-control" id="colonia" placeholder="Colonia">
               </div>
             </div>
             <div class="col-sm-12">
