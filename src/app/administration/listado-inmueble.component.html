@@ -1,6 +1,5 @@
 <div class="container">
     <div class="row">
-        <h2>Listado Inmuebles</h2>
         <div class="col-sm-10 col-sm-offset-1">
             <table class="table table-hover">
                 <tr>
@@ -12,13 +11,13 @@
                     <th>Editar</th>
                     <th>Eliminar</th>
                 </tr>
-                <tr *ngFor="let inmo of inmuebles" >
+                <tr *ngFor="let inmo of inmuebles">
                     <td>{{inmo.tipoInmueble}}</td>
                     <td>{{inmo.opcion}}</td>
                     <td>{{inmo.titulo}}</td>
                     <td>{{inmo.departamento}}</td>
                     <td >{{inmo.zona}}</td>
-                    <td><a (click)="editar(inmo)">Editar</a></td>
+                    <td><a routerLink="/agregar/{{inmo.id}}">Editar</a></td>
                     <td><a (click)="eliminar(inmo)">Eliminar</a></td>
                 </tr>
             </table>
@@ -26,4 +25,3 @@
         </div>
     </div>
 </div>
-

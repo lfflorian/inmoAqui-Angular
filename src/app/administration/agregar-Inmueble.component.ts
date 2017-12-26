@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Inmueble } from '../Models/inmueble.model';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
     selector: 'agregar-inmueble',
@@ -9,7 +11,21 @@ import { Inmueble } from '../Models/inmueble.model';
     styleUrls: ['./inmueble.component.css']
 })
 
-export class AgregarInmueble {
+export class AgregarInmueble implements OnInit {
+    refInmo: Inmueble[] = [];
+
+    ngOnInit() {
+        const id = +this.route.snapshot.paramMap.get('id');
+        if (id != 0)
+        {
+            console.log(id);
+        }
+    }
+
+    constructor(private route: ActivatedRoute) {
+
+    }
+
     CreateForm = new FormGroup({
         titulo: new FormControl(''),
         descripcion: new FormControl(''),
