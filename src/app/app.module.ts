@@ -7,21 +7,22 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from './material.module';
 import { AgregarInmueble } from './administration/agregar-inmueble.component';
 import { ListadoInmueble } from './administration/listado-inmueble.component';
-
+import { RoutingModule } from './routing.module';
 import 'hammerjs';
 
 @NgModule({
   declarations: [
     AppComponent,
     AgregarInmueble,
-    ListadoInmueble
+    ListadoInmueble,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+     RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
