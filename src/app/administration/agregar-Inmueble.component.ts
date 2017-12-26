@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormGroup, FormControl } from '@angular/forms';
-import { Inmueble } from '../Models/inmueble.model';
 import { ActivatedRoute } from '@angular/router';
+import { Inmueble } from '../Models/inmueble.model';
+import { Imagenes } from '../Models/imagenes.model';
 
 
 @Component({
@@ -24,6 +25,15 @@ export class AgregarInmueble implements OnInit {
 
     constructor(private route: ActivatedRoute) {
 
+    }
+
+    onChange(event) {
+        var files = event.srcElement.files;
+        for (let file of files)
+        {
+            console.log(file.name)
+        }
+        console.log(files);
     }
 
     CreateForm = new FormGroup({

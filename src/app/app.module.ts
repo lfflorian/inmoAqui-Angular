@@ -8,6 +8,7 @@ import {MaterialModule} from './material.module';
 import { AgregarInmueble } from './administration/agregar-inmueble.component';
 import { ListadoInmueble } from './administration/listado-inmueble.component';
 import { RoutingModule } from './Routes/routing.modules';
+import { ImageUploadModule } from 'angular2-image-upload';
 
 import { InmuebleService } from './Services/inmueble.service';
 import 'hammerjs';
@@ -24,7 +25,8 @@ import 'hammerjs';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-     RoutingModule
+    RoutingModule,
+    ImageUploadModule.forRoot()
   ],
   providers: [InmuebleService],
   bootstrap: [AppComponent]

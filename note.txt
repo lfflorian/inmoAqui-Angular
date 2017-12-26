@@ -1,0 +1,2 @@
+https://aberezkin.github.io/ng2-image-upload/#/demo
+Reference for upload images

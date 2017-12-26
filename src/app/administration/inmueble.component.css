@@ -9,4 +9,6 @@ select {
     padding: 50px;
 }
 
-
+input {
+    margin-top: 15px;
+}
