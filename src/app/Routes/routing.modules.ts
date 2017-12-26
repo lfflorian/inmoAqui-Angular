@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ListadoInmueble } from './administration/listado-inmueble.component';
-import { AgregarInmueble } from './administration/agregar-inmueble.component';
+import { ListadoInmueble } from '../administration/listado-inmueble.component';
+import { AgregarInmueble } from '../administration/agregar-inmueble.component';
 
 const routes: Routes = [
     {pathMatch: 'full', path: '', redirectTo: '/listado'},
