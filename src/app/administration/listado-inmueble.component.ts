@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Inmueble } from '../Models/inmueble.model';
 import { InmuebleService } from '../Services/inmueble.service';
+import { NgbPagination} from '@ng-bootstrap/ng-bootstrap';
+import { inmuebles } from '../Services/inmueblesList.component';
 
 @Component({
     selector: 'listado-inmueble',
@@ -17,6 +19,12 @@ export class ListadoInmueble implements OnInit {
     getInmuebles(): void {
         this.inmuebleService.getInmuebles()
         .subscribe(inmo => this.inmuebles = inmo);
+    }
+
+    collection: number = inmuebles.length;
+    currentPage: number = 1;
+    get pageInmuebles(){
+        return this.inmuebles.slice((this.currentPage-1)*10, this.currentPage*10);
     }
 
     refInmo: Inmueble;

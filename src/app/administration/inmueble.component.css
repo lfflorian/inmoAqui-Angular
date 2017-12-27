@@ -13,3 +13,7 @@ select {
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+label {
+    display: none;
+}

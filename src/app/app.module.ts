@@ -10,6 +10,7 @@ import { ListadoInmueble } from './administration/listado-inmueble.component';
 import { RoutingModule } from './Routes/routing.modules';
 import { ImageUploadModule } from 'angular2-image-upload';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { InmuebleService } from './Services/inmueble.service';
 import 'hammerjs';
 
@@ -26,7 +27,8 @@ import 'hammerjs';
     FormsModule,
     ReactiveFormsModule,
     RoutingModule,
-    ImageUploadModule.forRoot()
+    ImageUploadModule.forRoot(),
+    NgbModule.forRoot()
   ],
   providers: [InmuebleService],
   bootstrap: [AppComponent]
