@@ -95,13 +95,13 @@
                 <input formControlName="colonia"  type="text" class="form-control" id="colonia" placeholder="Colonia">
               </div>
             </div>
+            <!--carga de archivos-->
+            <div class="col-sm-12 input">
+                <image-upload [extensions]="['jpeg','png']" buttonCaption="Seleccionar imagen"
+                 dropBoxMessage="Arrastre Aquí" ></image-upload>
+            </div>
             <div class="col-sm-12">
               <button type="submit" class="btn btn-info">Enviar</button>
-            </div>
-            <!--carga de archivos-->
-            <div class="col-sm-12">
-                <image-upload></image-upload>
-                <input (change)="onChange($event)" type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" multiple/>
             </div>
           </form>
         </div>

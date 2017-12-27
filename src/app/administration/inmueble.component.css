@@ -9,6 +9,7 @@ select {
     padding: 50px;
 }
 
-input {
+.input {
     margin-top: 15px;
+    margin-bottom: 15px;
 }

@@ -12,7 +12,7 @@ import { Imagenes } from '../Models/imagenes.model';
     styleUrls: ['./inmueble.component.css']
 })
 
-export class AgregarInmueble implements OnInit {
+export class EdicionInmueble implements OnInit {
     refInmo: Inmueble[] = [];
 
     ngOnInit() {
@@ -26,7 +26,7 @@ export class AgregarInmueble implements OnInit {
     constructor(private route: ActivatedRoute) {
 
     }
-
+    
     onChange(event) {
         var files = event.srcElement.files;
         for (let file of files)
@@ -48,7 +48,8 @@ export class AgregarInmueble implements OnInit {
         departamento: new FormControl(''),
         municipio: new FormControl(''),
         zona: new FormControl(''),
-        colonia: new FormControl('')
+        colonia: new FormControl(''),
+        imagenes: new FormControl('')
     });
     
     TipoInmuebles: string[] = [
