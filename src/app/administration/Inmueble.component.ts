@@ -4,7 +4,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Inmueble } from '../Models/inmueble.model';
 import { Imagenes } from '../Models/imagenes.model';
-
+import { InmuebleService } from '../Services/inmueble.service';
 
 @Component({
     selector: 'agregar-inmueble',
@@ -14,16 +14,24 @@ import { Imagenes } from '../Models/imagenes.model';
 
 export class EdicionInmueble implements OnInit {
     refInmo: Inmueble[] = [];
+    inmueble: Inmueble[]; /* CAMBIAR A SOLO UNO */
+
+    getInmueble(id: number): void {
+        /* GET INMUEBLE */
+        this.inmuebleService.getInmuebles()
+        .subscribe(inmo => this.inmueble = inmo);
+    }
 
     ngOnInit() {
         const id = +this.route.snapshot.paramMap.get('id');
         if (id != 0)
         {
-            console.log(id);
+            this.getInmueble(id);
+            console.log(this.inmueble);
         }
     }
 
-    constructor(private route: ActivatedRoute) {
+    constructor(private route: ActivatedRoute, private inmuebleService: InmuebleService) {
 
     }
     
