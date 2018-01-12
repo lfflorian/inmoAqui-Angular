@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start:client": "ng serve",
-    "start:server": "set NODE_ENV=development set DEBUG=inmoAqui* nodemon server/index.js --exec babel-node"
+    "start:server": "set NODE_ENV=development set DEBUG=inmoAqui* & nodemon server/index.js --exec babel-node"
   },
   "private": true,
   "dependencies": {
