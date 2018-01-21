@@ -10,15 +10,21 @@ import { inmuebles } from '../Services/inmueblesList.component';
 })
 
 export class ListadoInmueble implements OnInit {
+    inmuebles: Inmueble[];
     constructor(private inmuebleService: InmuebleService) {}
     ngOnInit(){
-        this.getInmuebles();
+        //this.getInmuebles();
+        this.inmuebleService.getInmuebles()
+        .then((inmuebles: Inmueble[]) => {
+            this.inmuebles = inmuebles;
+        });
     }
 
-    inmuebles: Inmueble[];
     getInmuebles(): void {
         this.inmuebleService.getInmuebles()
-        .subscribe(inmo => this.inmuebles = inmo);
+        .then((inmuebles: Inmueble[]) => {
+            this.inmuebles = inmuebles;
+        });
     }
 
     collection: number = inmuebles.length;

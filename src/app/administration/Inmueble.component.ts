@@ -14,12 +14,18 @@ import { InmuebleService } from '../Services/inmueble.service';
 
 export class EdicionInmueble implements OnInit {
     refInmo: Inmueble[] = [];
-    inmueble: Inmueble[]; /* CAMBIAR A SOLO UNO */
-
+    inmueble: Inmueble; /* CAMBIAR A SOLO UNO */
+    sub: any;
     getInmueble(id: number): void {
         /* GET INMUEBLE */
-        this.inmuebleService.getInmuebles()
-        .subscribe(inmo => this.inmueble = inmo);
+        this.sub = this.route.params.subscribe(param => {
+            this.inmuebleService
+            .getInmueble(id)
+            .then((Inmueble: Inmueble) => {
+                this.inmueble = Inmueble;
+                console.log(this.inmueble);
+            });
+        });
     }
 
     ngOnInit() {
@@ -27,7 +33,6 @@ export class EdicionInmueble implements OnInit {
         if (id != 0)
         {
             this.getInmueble(id);
-            console.log(this.inmueble);
         }
     }
 
