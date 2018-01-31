@@ -14,12 +14,18 @@ import { InmuebleService } from '../Services/inmueble.service';
 
 export class EdicionInmueble implements OnInit {
     refInmo: Inmueble[] = [];
-    inmueble: Inmueble[]; /* CAMBIAR A SOLO UNO */
-
+    inmueble: Inmueble; /* CAMBIAR A SOLO UNO */
+    sub: any;
     getInmueble(id: number): void {
         /* GET INMUEBLE */
-        this.inmuebleService.getInmuebles()
-        .subscribe(inmo => this.inmueble = inmo);
+        this.sub = this.route.params.subscribe(param => {
+            this.inmuebleService
+            .getInmueble(id)
+            .then((Inmueble: Inmueble) => {
+                this.inmueble = Inmueble;
+                console.log(this.inmueble);
+            });
+        });
     }
 
     ngOnInit() {
@@ -27,7 +33,6 @@ export class EdicionInmueble implements OnInit {
         if (id != 0)
         {
             this.getInmueble(id);
-            console.log(this.inmueble);
         }
     }
 
@@ -50,7 +55,7 @@ export class EdicionInmueble implements OnInit {
         tipoinmueble: new FormControl(''),
         opcion: new FormControl(''),
         nohabitaciones: new FormControl(''),
-        nobaños: new FormControl(''),
+        banos: new FormControl(''),
         parqueos: new FormControl(''),
         dimenciones: new FormControl(''),
         departamento: new FormControl(''),
@@ -82,7 +87,7 @@ export class EdicionInmueble implements OnInit {
             tipoinmueble:  CreateForm.value.tipoinmueble,
             opcion:  CreateForm.value.opcion,
             nohabitaciones: CreateForm.value.nohabitaciones,
-            nobaños: CreateForm.value.nobaños,
+            banos: CreateForm.value.nobanos,
             parqueos: CreateForm.value.parqueos,
             dimenciones: CreateForm.value.dimenciones,
             departamento: CreateForm.value.departamento,

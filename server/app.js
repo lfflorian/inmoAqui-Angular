@@ -1,7 +1,21 @@
 import express from 'express'
+import bodyParser from 'body-parser'
+import { inmueble } from './routes'
 
 const app = express()
 
-app.get('/', (req, res) => res.send('Hola'))
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true}))
+
+if (process.env.NODE_ENV === 'development') {
+    app.use((req, res, next) => {
+        res.setHeader('Access-Control-Allow-Origin', '*')
+        res.setHeader('Access-Control-Allow-Headers','Origin, X-Request-With, Content-Type, Accept')
+        res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PATCH, DELETE, OPTIONS')
+        next()
+    })
+}
+
+app.use('/api/inmuebles', inmueble)
 
 export default app

@@ -7,7 +7,7 @@ export class Inmueble {
     tipoInmueble: string;
     opcion: string;
     habitaciones: number;
-    baños: number;
+    banos: number;
     parqueos: number;
     dimenciones: number;
     departamento: string;
@@ -17,7 +17,7 @@ export class Inmueble {
     imagenes: Imagenes[];
 
     constructor(id: number,titulo: string, descripcion: string, tipoInmueble: string,
-        opcion: string, habitaciones: number, baños: number, parqueos: number, dimenciones: number,
+        opcion: string, habitaciones: number, banos: number, parqueos: number, dimenciones: number,
         departamento: string, municipio: string, zona: string,colonia: string) {
             this.id = id,
             this.titulo = titulo,
@@ -25,7 +25,7 @@ export class Inmueble {
             this.tipoInmueble = tipoInmueble,
             this.opcion = opcion,
             this.habitaciones = habitaciones,
-            this.baños = baños,
+            this.banos = banos,
             this.parqueos = parqueos,
             this.dimenciones = dimenciones,
             this.departamento = departamento,

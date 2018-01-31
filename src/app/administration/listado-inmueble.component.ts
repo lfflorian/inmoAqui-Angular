@@ -10,21 +10,33 @@ import { inmuebles } from '../Services/inmueblesList.component';
 })
 
 export class ListadoInmueble implements OnInit {
-    constructor(private inmuebleService: InmuebleService) {}
+    inmuebles: Inmueble[];
+    non: any;
+    constructor(private inmuebleService: InmuebleService) {
+        
+    }
+    
     ngOnInit(){
-        this.getInmuebles();
+        //this.getInmuebles();
+        this.inmuebleService.getInmuebles()
+        .then((inmuebles: Inmueble[]) => {
+            this.inmuebles = inmuebles;
+        });
     }
 
-    inmuebles: Inmueble[];
     getInmuebles(): void {
         this.inmuebleService.getInmuebles()
-        .subscribe(inmo => this.inmuebles = inmo);
+        .then((inmuebles: Inmueble[]) => {
+            this.inmuebles = inmuebles;
+        });
     }
 
     collection: number = inmuebles.length;
     currentPage: number = 1;
+    
     get pageInmuebles(){
-        return this.inmuebles.slice((this.currentPage-1)*10, this.currentPage*10);
+        this.non = this.inmuebles.slice((this.currentPage-1)*10, this.currentPage*10);
+        return this.non;
     }
 
     refInmo: Inmueble;

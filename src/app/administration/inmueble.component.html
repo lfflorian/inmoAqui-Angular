@@ -22,19 +22,19 @@
             <div class="col-sm-12">
               <div class="form-group">
                 <label for="titulo">Titulo</label>
-                <input formControlName="titulo" type="text" class="form-control" id="titulo" placeholder="Titulo">
+                <input formControlName="titulo" value="{{inmueble.titulo}}" type="text" class="form-control" id="titulo" placeholder="Titulo">
               </div>
             </div>
             <div class="col-sm-12">
               <div class="form-group">
                 <label for="descripcion">Descripcion</label>
-                <textarea formControlName="descripcion" class="form-control" rows="3" id="descripcion"></textarea>
+                <textarea formControlName="descripcion" value="{{inmueble.descripcion}}"  class="form-control" rows="3" id="descripcion">{{inmueble.titulo}}</textarea>
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form-group">
                 <label for="tipoInmueble">Tipo de Inmueble</label>
-                <select formControlName="tipoinmueble" class="form-control">
+                <select formControlName="tipoinmueble" class="form-control" >
                   <option *ngFor="let tipo of TipoInmuebles">{{tipo}}</option>
                 </select>
               </div>
@@ -50,49 +50,49 @@
             <div class="col-sm-3">
               <div class="form-group">
                 <label for="habitaciones">No. Habitaciones</label>
-                <input formControlName="nohabitaciones" type="number" class="form-control" id="habitaciones" placeholder="Habitaciones">
+                <input value="{{inmueble.habitaciones}}" formControlName="nohabitaciones" type="number" class="form-control" id="habitaciones" placeholder="Habitaciones">
               </div>
             </div>
             <div class="col-sm-3">
               <div class="form-group">
                 <label for="baños">No. Baños</label>
-                <input formControlName="nobaños" type="number" class="form-control" id="baños" placeholder="Baños">
+                <input value="{{inmueble.banos}}" formControlName="banos" type="number" class="form-control" id="baños" placeholder="Baños">
               </div>
             </div>
             <div class="col-sm-3">
               <div class="form-group">
                 <label for="parqueos">No. Parqueos</label>
-                <input formControlName="parqueos" type="number" class="form-control" id="parqueos" placeholder="Parqueos">
+                <input value="{{inmueble.parqueos}}" formControlName="parqueos" type="number" class="form-control" id="parqueos" placeholder="Parqueos">
               </div>
             </div>
             <div class="col-sm-3">
               <div class="form-group">
                 <label for="dimenciones">Dimenciones</label>
-                <input formControlName="dimenciones" type="number" class="form-control" id="dimenciones" placeholder="Dimenciones">
+                <input value="{{inmueble.dimenciones}}" formControlName="dimenciones" type="number" class="form-control" id="dimenciones" placeholder="Dimenciones">
               </div>
             </div>
             <div class="col-sm-4">
               <div class="form-group">
                 <label for="departamento">Departamento</label>
-                <input formControlName="departamento" type="text" class="form-control" id="departamento" placeholder="Departamento">
+                <input value="{{inmueble.departamento}}" formControlName="departamento" type="text" class="form-control" id="departamento" placeholder="Departamento">
               </div>
             </div>
             <div class="col-sm-4">
               <div class="form-group">
                 <label for="municipio">Municipio</label>
-                <input formControlName="municipio" type="text" class="form-control" id="municipio" placeholder="Municipio">
+                <input value="{{inmueble.municipio}}" formControlName="municipio" type="text" class="form-control" id="municipio" placeholder="Municipio">
               </div>
             </div>
             <div class="col-sm-4">
               <div class="form-group">
                 <label for="zona">Zona</label>
-                <input formControlName="zona"  type="text" class="form-control" id="zona" placeholder="Zona">
+                <input value="{{inmueble.zona}}" formControlName="zona"  type="text" class="form-control" id="zona" placeholder="Zona">
               </div>
             </div>
             <div class="col-sm-12">
               <div class="form-group">
                 <label for="colonia">Colonia</label>
-                <input formControlName="colonia"  type="text" class="form-control" id="colonia" placeholder="Colonia">
+                <input value="{{inmueble.colonia}}" formControlName="colonia"  type="text" class="form-control" id="colonia" placeholder="Colonia">
               </div>
             </div>
             <!--carga de archivos-->
