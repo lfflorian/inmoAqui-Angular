@@ -1,32 +1,7 @@
 import express from 'express'
-
-//middleWare
-
-function InmuebleMiddleware(req, res, next) {
-    const { id } = req.params
-    req.inmueble = inmuebles.find(({ id }) => id === +id )
-    next()
-}
+import { inmueble, inmuebles, InmuebleMiddleware } from '../middleware/inmueble';
 
 const app = express.Router()
-const inmueble = {
-    id: 1,
-    titulo: "Casa en colonia lourdes",
-    descripcion: "Casa linda en colonia lourdes zona 16",
-    tipoInmueble: "casa",
-    opcion: "venta",
-    habitaciones: 2,
-    banos: 2,
-    parqueos: 2,
-    dimenciones: 100,
-    departamento: "Guatemala",
-    municipio: "Guatemala",
-    zona: "16",
-    colonia: "Lourdes",
-    imagenes: []
-}
-
-const inmuebles = new Array(15).fill(inmueble)
 
 app.get('/', (req, res) => res.status(200).json(inmuebles))
 

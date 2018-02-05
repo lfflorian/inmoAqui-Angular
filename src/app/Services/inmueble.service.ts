@@ -7,7 +7,6 @@ import { catchError, map, tap } from 'rxjs/operators';
 import urljoin from 'url-join';
 import 'rxjs/add/operator/toPromise';
 import { Inmueble } from '../Models/inmueble.model';
-import { inmuebles } from './inmueblesList.component';
 import { environment } from '../../environments/environment';
 import { error } from 'util';
 

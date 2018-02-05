@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Inmueble } from '../Models/inmueble.model';
 import { InmuebleService } from '../Services/inmueble.service';
 import { NgbPagination} from '@ng-bootstrap/ng-bootstrap';
-import { inmuebles } from '../Services/inmueblesList.component';
+//import { inmuebles } from '../Services/inmueblesList.component';
 
 @Component({
     selector: 'listado-inmueble',
@@ -31,7 +31,7 @@ export class ListadoInmueble implements OnInit {
         });
     }
 
-    collection: number = inmuebles.length;
+    //collection: number = this.inmuebles.length;
     currentPage: number = 1;
     
     get pageInmuebles(){

@@ -1,4 +1,4 @@
-const inmueble = {
+export const inmueble = {
     id: 1,
     titulo: "Casa bonita",
     descripcion: "esta casa es muiy bonita",
@@ -17,3 +17,8 @@ const inmueble = {
 
 export const inmuebles = new Array(10).fill(inmueble)
 
+export const InmuebleMiddleware = (req, res, next) => {
+    const { id } = req.params
+    req.inmueble = inmuebles.find(({ id }) => id === +id )
+    next()
+}
